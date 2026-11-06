@@ -9,6 +9,8 @@ target/
 .env
 .env.local
 *.ps1
+backups/
+backup_database.py
 
 # Logs & temp files
 *.log
