@@ -1,11 +1,9 @@
-# Stage 1: Build JAR using Maven
-FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
+# Stage 1: Build Spring Boot JAR
+FROM maven:3.9.9-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY pom.xml .
-# Download dependencies first for caching
-RUN mvn dependency:go-offline -B
 COPY src ./src
-RUN mvn clean package -DskipTests -B
+RUN mvn clean package -DskipTests --no-transfer-progress
 
 # Stage 2: Minimal Runtime JRE image
 FROM eclipse-temurin:21-jre-alpine
