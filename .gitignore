@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+dist/
+build/
+target/
+.gradle/
+
+# Environment and sensitive scripts
+.env
+.env.local
+*.ps1
+
+# Logs & temp files
+*.log
+*.tmp
+*.pdf
+.idea/
+.vscode/
+*.iml
+.system_generated/
+scratch/
+
